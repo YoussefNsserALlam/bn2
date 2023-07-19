@@ -1,28 +1,4 @@
-<?php
-$jsonString = file_get_contents("./dashbord/data.json");
-$productsArray = json_decode($jsonString, true);
 
-if (isset($_POST["phonef2"]) && isset($_POST["namef1"])) {
-    $name = $_POST["namef1"];
-    $namp = $_POST["phonef2"];
-    $namepr = $_POST["namepr"];
-    $link = $_POST["link"];
-    $slici = $_POST["slici"];
-    $napkm = $_POST["napkm"];
-    $data = array(
-        'user' => $name,
-        'phne' => $namp,
-        'namepr' => $namepr,
-        'link' => $link,
-        'slici' => $slici,
-        'napkm' => $napkm
-    );
-    $productsArray[] = $data;
-    $fileContent = json_encode($productsArray);
-    file_put_contents('./dashbord/data.json', $fileContent);
-    
-}
-?>
 <!doctype html><html dir="rtl" lang="ar">
     <head> 
         <meta charset="UTF-8">
